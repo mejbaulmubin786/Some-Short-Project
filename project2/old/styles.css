@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Initial gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+  transition: background 10s ease-in-out; /* Smooth and slow transition */
+}
+
+.player-setup {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  max-width: 400px;
+  width: 90%;
+}
+
+.setup-heading {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.setup-description {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #e0e0e0;
+}
+
+.input {
+  width: 80%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.8);
+}
+
+.start-button {
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #4caf50;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.start-button:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+.start-button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
+}

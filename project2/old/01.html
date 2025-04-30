@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Player Setup</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="player-setup">
+      <h1 class="setup-heading">How many players will be playing?</h1>
+      <input class="player-count-input" type="number" min="1" value="1" />
+      <button class="start-button">Go</button>
+    </div>
+
+    <script>
+      const playerCountInput = document.querySelector(".player-count-input");
+      const startButton = document.querySelector(".start-button");
+      const playerSetupDiv = document.querySelector(".player-setup");
+
+      startButton.addEventListener("click", () => {
+        const playerCount = parseInt(playerCountInput.value, 10);
+        if (isNaN(playerCount) || playerCount < 1) {
+          alert("Please enter a valid number of players.");
+          return;
+        }
+
+        // Clear previous player name inputs, if any
+        const existingForm = document.querySelector(".player-name-form");
+        if (existingForm) {
+          existingForm.remove();
+        }
+
+        // Create a form to input player names
+        const form = document.createElement("form");
+        form.className = "player-name-form";
+
+        for (let i = 1; i <= playerCount; i++) {
+          const label = document.createElement("label");
+          label.textContent = `Player ${i} Name:`;
+          label.setAttribute("for", `player-${i}`);
+          const input = document.createElement("input");
+          input.type = "text";
+          input.id = `player-${i}`;
+          input.name = `player-${i}`;
+          input.placeholder = `Enter Player ${i} Name`;
+          input.className = "player-name-input";
+          form.appendChild(label);
+          form.appendChild(input);
+          form.appendChild(document.createElement("br")); // Add line break for spacing
+        }
+
+        const submitButton = document.createElement("button");
+        submitButton.type = "submit";
+        submitButton.textContent = "Start Game";
+        submitButton.className = "submit-button";
+        form.appendChild(submitButton);
+
+        playerSetupDiv.appendChild(form);
+
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const playerNames = [];
+          for (let i = 1; i <= playerCount; i++) {
+            const playerName = form.querySelector(`#player-${i}`).value.trim();
+            if (playerName) {
+              playerNames.push(playerName);
+            }
+          }
+          if (playerNames.length === playerCount) {
+            console.log("Starting game with players:", playerNames);
+            alert(`Game started with players: ${playerNames.join(", ")}`);
+          } else {
+            alert("Please fill out all player names before starting.");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
