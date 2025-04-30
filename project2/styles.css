@@ -1,0 +1,39 @@
+body {
+  background-color: lightblue;
+  transition: background-color 5s ease-in-out;
+}
+
+.player {
+  max-width: 20rem;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  background-color: wheat;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 5%;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  font-size: 15px;
+}
+
+.inputOne {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  text-align: center;
+  background: burlywood;
+  color: #fff;
+  outline: none;
+}
+
+.buttonOne {
+  padding: 10px 30px;
+  background-color: lightgreen;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
