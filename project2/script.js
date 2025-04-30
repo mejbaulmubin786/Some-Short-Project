@@ -13,12 +13,21 @@ function changeBackgroundColor() {
 
 setInterval(changeBackgroundColor, 5000);
 
-// document.body.style.backgroundColor = "lightblue";
-
 let heading1 = document.getElementsByClassName("heading")[0];
 let inputOne = document.getElementsByClassName("inputOne")[0];
 let buttonOne = document.getElementsByClassName("buttonOne")[0];
+let messageElement = document.createElement("p");
+
+buttonOne.insertAdjacentElement("afterend", messageElement);
 
 buttonOne.addEventListener("click", function () {
-  console.log(inputOne.value);
+  if (!inputOne.value) {
+    messageElement.innerText = "Please enter a value";
+  } else if (isNaN(inputOne.value)) {
+    messageElement.innerText = "Please enter a numeric value";
+  } else if (inputOne.value > 0 && inputOne.value <= 10) {
+    messageElement.innerText = "The value is: " + inputOne.value;
+  } else {
+    messageElement.innerText = "please enter a number between 1 to 10";
+  }
 });
