@@ -8,10 +8,12 @@ function changeBackgroundColor() {
     "#00FFFF",
   ];
   const randomIndex = Math.floor(Math.random() * colors.length);
+  document.body.style.transition = "background-color 5s ease-in-out"; // Smooth transition
   document.body.style.backgroundColor = colors[randomIndex];
 }
 
 setInterval(changeBackgroundColor, 5000);
+
 /*
 let heading1 = document.getElementsByClassName("heading")[0];
 let inputOne = document.getElementsByClassName("inputOne")[0];
