@@ -91,14 +91,14 @@ function checkGuess() {
   if (isNaN(guess)) {
     messageElement.innerText = "Please enter a valid number.";
   } else if (guess === secretNumber) {
-    displayWinnerMessage("Congratulations! Player 2 wins! 🎉");
+    displayWinnerMessage("Congratulations! Player 2 wins!");
   } else {
     attempts--;
     if (attempts > 0) {
       messageElement.innerText = `Wrong guess! Try again. Attempts left: ${attempts}`;
       inputOne.value = "";
     } else {
-      displayWinnerMessage("Game Over! Player 1 wins! 🎉");
+      displayWinnerMessage("Game Over! Player 1 wins!");
     }
   }
 }
