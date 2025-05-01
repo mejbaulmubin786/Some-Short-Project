@@ -58,7 +58,7 @@ body {
 
 #main-content {
   padding: 25px;
-  min-height: 400px;
+  /* min-height: 400px; */
 }
 #main-content h2 {
   margin: 0 0 10px;

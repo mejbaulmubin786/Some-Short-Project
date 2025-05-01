@@ -8,109 +8,56 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div id="wrapper">
-      <div id="header">
-        <h1>Crud</h1>
+    <div id="wrapper" class="wrapper">
+      <div id="header" class="header">
+        <h1 id="header-title" class="header-title">Crud</h1>
       </div>
-      <div id="menu">
-        <ul>
-          <li>
-            <a href="index.html">Home</a>
+      <div id="menu" class="menu">
+        <ul id="menu-list" class="menu-list">
+          <li id="menu-item-home" class="menu-item">
+            <a id="menu-link-home" class="menu-link" href="index.html">Home</a>
           </li>
-          <li>
-            <a href="add.html">Add</a>
+          <li id="menu-item-add" class="menu-item">
+            <a id="menu-link-add" class="menu-link" href="add.html">Add</a>
           </li>
-          <li>
-            <a href="update.html">Update</a>
+          <li id="menu-item-update" class="menu-item">
+            <a id="menu-link-update" class="menu-link" href="update.html"
+              >Update</a
+            >
           </li>
-          <li>
-            <a href="delete.html">Delete</a>
+          <li id="menu-item-delete" class="menu-item">
+            <a id="menu-link-delete" class="menu-link" href="delete.html"
+              >Delete</a
+            >
           </li>
-          <li>
-            <a href="view-details.html">View</a>
+          <li id="menu-item-view" class="menu-item">
+            <a id="menu-link-view" class="menu-link" href="view-details.html"
+              >View</a
+            >
           </li>
         </ul>
       </div>
 
-      <div id="main-content">
-        <h2>All Records</h2>
-        <table cellpadding="7px">
-          <thead>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Class</th>
-            <th>Phone</th>
-            <th>Action</th>
+      <div id="main-content" class="main-content">
+        <h2 id="main-title" class="main-title">All Records</h2>
+        <table id="record-table" class="record-table" cellpadding="7px">
+          <thead id="table-header" class="table-header">
+            <tr id="header-row" class="header-row">
+              <th id="header-id" class="header-cell">Id</th>
+              <th id="header-name" class="header-cell">Name</th>
+              <th id="header-address" class="header-cell">Address</th>
+              <th id="header-class" class="header-cell">Class</th>
+              <th id="header-phone" class="header-cell">Phone</th>
+              <th id="header-action" class="header-cell">Action</th>
+            </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Ramesh</td>
-              <td>Delhi</td>
-              <td>BCA</td>
-              <td>9876543210</td>
-              <td>
-                <a href="edit.html">Edit</a>
-                <a href="delete-inline.html">Delete</a>
-                <a href="view-details.html">View</a>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Suresh</td>
-              <td>Punjab</td>
-              <td>BCOM</td>
-              <td>9876543210</td>
-              <td>
-                <a href="edit.html">Edit</a>
-                <a href="delete-inline.html">Delete</a>
-                <a href="view-details.html">View</a>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Suresh</td>
-              <td>Haryana</td>
-              <td>BSC</td>
-              <td>9876543210</td>
-              <td>
-                <a href="edit.html">Edit</a>
-                <a href="delete-inline.html">Delete</a>
-                <a href="view-details.html">View</a>
-              </td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Krishna</td>
-              <td>Gujrat</td>
-              <td>BCA</td>
-              <td>9876543210</td>
-              <td>
-                <a href="edit.html">Edit</a>
-                <a href="delete-inline.html">Delete</a>
-                <a href="view-details.html">View</a>
-              </td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Rohit</td>
-              <td>Delhi</td>
-              <td>BCA</td>
-              <td>9876543210</td>
-              <td>
-                <a href="edit.html">Edit</a>
-                <a href="delete-inline.html">Delete</a>
-                <a href="view-details.html">View</a>
-              </td>
-            </tr>
+          <tbody id="table-body" class="table-body">
+            <!-- Add more rows similarly -->
           </tbody>
         </table>
       </div>
     </div>
 
     <script src="js/script.js"></script>
-
-    </script>
   </body>
 </html>

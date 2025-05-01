@@ -33,3 +33,91 @@ let inputName = document.getElementById("input-name");
 let inputAddress = document.getElementById("input-address");
 let inputPhone = document.getElementById("input-phone");
 let inputDetails = document.getElementById("input-details");
+let recordTable = document.getElementById("record-table");
+
+let tableRow = document.getElementsByClassName("table-row");
+let tableBody = document.getElementById("table-body");
+// recordTable.style.display = "none"; // Initially hide the table
+
+let studentList = [
+  {
+    name: "Mejbaul Mubin",
+    phone: "01767880506",
+    class: "BSc",
+    description:
+      "My name is Mejbaul Mubin, and I have recently completed my graduation in Computer Science. I currently reside in Noakhali.",
+    address: "Noakhali", // Added address
+  },
+  {
+    name: "Rakib Hasan",
+    phone: "017xxxxxxxx",
+    class: "BCA",
+    description: "A diligent student with a keen interest in programming.",
+    address: "Noakhali", // Added address
+  },
+  {
+    name: "Sadia Akter",
+    phone: "019yyyyyyyy",
+    class: "BSC",
+    description: "Excels in mathematics and has a strong analytical mind.",
+    address: "Chittagong", // Added address
+  },
+  {
+    name: "Arif Hossain",
+    phone: "018zzzzzzzz",
+    class: "B.TECH",
+    description:
+      "Passionate about technology and actively participates in coding clubs.",
+    address: "Dhaka", // Added address
+  },
+  {
+    name: "Taslima Khan",
+    phone: "016aaaaaaaa",
+    class: "BBA",
+    description:
+      "Demonstrates strong leadership skills and is actively involved in extracurricular activities.",
+    address: "Barishal", // Added address
+  },
+  {
+    name: "Imran Ali",
+    phone: "015bbbbbbbb",
+    class: "MBA",
+    description:
+      "Focused on business studies and aims to pursue a career in management.",
+    address: "Sylhet", // Added address
+  },
+];
+
+// studentList অ্যারে থেকে ডেটা টেবিলে অ্যাড করার ফাংশন
+function populateTable(studentList) {
+  // প্রথমে টেবিল ক্লিয়ার করুন
+  tableBody.innerHTML = "";
+
+  // প্রতিটি স্টুডেন্টের ডেটা টেবিলে যোগ করুন
+  studentList.forEach((student, index) => {
+    // একটি নতুন রো তৈরি করুন
+    let row = document.createElement("tr");
+    row.id = `row-${index + 1}`;
+    row.className = "table-row";
+
+    // রোতে কলাম যোগ করুন
+    row.innerHTML = `
+      <td class="table-cell">${index + 1}</td>
+      <td class="table-cell">${student.name}</td>
+      <td class="table-cell">${student.address}</td> <!-- Address কলাম -->
+      <td class="table-cell">${student.class}</td>
+      <td class="table-cell">${student.phone}</td>
+      <td class="table-cell">
+        <a href="edit.html" class="action-link edit-link">Edit</a>
+        <a href="delete-inline.html" class="action-link delete-link">Delete</a>
+        <a href="view-details.html" class="action-link view-link">View</a>
+      </td>
+    `;
+
+    // রো টেবিলের tbody-তে যোগ করুন
+    tableBody.appendChild(row);
+  });
+}
+
+// studentList অ্যারে থেকে ডেটা টেবিলে যোগ করুন
+populateTable(studentList);
