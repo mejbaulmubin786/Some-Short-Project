@@ -27,3 +27,9 @@ function changeBackgroundImage() {
 
 // প্রতি ৫ সেকেন্ডে ফাংশনটি চালানোর জন্য
 setInterval(changeBackgroundImage, 5000);
+
+/*==================================================================*/
+let inputName = document.getElementById("input-name");
+let inputAddress = document.getElementById("input-address");
+let inputPhone = document.getElementById("input-phone");
+let inputDetails = document.getElementById("input-details");

@@ -2,7 +2,7 @@ body {
   font: 16px arial;
   margin: 0;
   padding: 0;
-  background-image: url(./img/001.jpg);
+  background-image: url(../img/001.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   transition: 5s ease-in-out;
@@ -77,7 +77,7 @@ body {
   text-transform: uppercase;
 }
 #main-content table th:last-child {
-  width: 130px;
+  width: 180px;
 }
 #main-content table td {
   background-color: #fff;
@@ -170,4 +170,16 @@ body {
 
 #main-content .pagination li a:hover {
   background-color: #333;
+}
+
+#main-content .post-form .form-group textarea {
+  /* টেক্সট এরিয়ার জন্য যোগ করা */
+  font-size: 16px;
+  width: 66%;
+  display: inline-block;
+  padding: 5px;
+  margin: 0;
+  border: 1px solid #ccc; /* টেক্সট এরিয়ার জন্য বর্ডার যোগ করা */
+  border-radius: 4px; /* টেক্সট এরিয়ার জন্য সামান্য বর্ডার রেডিয়াস */
+  box-sizing: border-box; /* প্যাডিং এবং বর্ডার উইথের মধ্যে অন্তর্ভুক্ত করার জন্য */
 }
