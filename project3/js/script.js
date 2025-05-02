@@ -38,8 +38,12 @@ const inputPhone = document.getElementById("input-phone");
 const inputDetails = document.getElementById("input-details");
 const tableBody = document.getElementById("table-body");
 const tableRow = document.getElementsByClassName("table-row");
+const formSubmit = document.getElementById("form-submit");
 
-// ডেটা সংরক্ষণের জন্য একটি অ্যারে
+
+
+// let studentList = [];
+
 let studentList = [
   {
     name: "Mejbaul Mubin",
@@ -132,19 +136,19 @@ let studentList = [
 ];
 
 
-if(studentList.length > 0) {
-  studentList.forEach((student, index) => {
-    const row = document.createElement("tr");
-    row.className = "table-row";
+// ফর্ম সাবমিট হলে ডেটা টেবিলে যোগ করার জন্য
+
+if(studentList.length>0){
+  studentList.forEach((student, index)=>{
+    let row = document.createElement('tr');
+    row.classList.add("table-row");
     row.innerHTML = `
-      <td>${index + 1}</td>
-      <td>${student.name}</td>
-      <td>${student.address}</td>
-      <td>${student.class}</td>
-      <td>${student.phone}</td>
-      
-      
-      <td id="row-2-action" class="table-cell">
+    <td>${index + 1}</td>
+    <td>${student.name}</td>
+    <td>${student.address}</td>
+    <td>${student.class}</td>
+    <td>${student.phone}</td>
+    <td class="table-cell">
                 <a
                   id="row-2-edit"
                   class="action-link edit-link"

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>CRUD</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <div id="wrapper" class="wrapper">
+    <div id="header" class="header">
+      <h1 id="header-title" class="header-title">Crud</h1>
+    </div>
+    <div id="menu" class="menu">
+      <ul id="menu-list" class="menu-list">
+        <li id="menu-item-home" class="menu-item">
+          <a id="menu-link-home" class="menu-link" href="index.html">Home</a>
+        </li>
+        <li id="menu-item-add" class="menu-item">
+          <a id="menu-link-add" class="menu-link" href="add.html">Add</a>
+        </li>
+        <li id="menu-item-update" class="menu-item">
+          <a id="menu-link-update" class="menu-link" href="update.html">Update</a>
+        </li>
+        <li id="menu-item-delete" class="menu-item">
+          <a id="menu-link-delete" class="menu-link" href="delete.html">Delete</a>
+        </li>
+        <li id="menu-item-view" class="menu-item">
+          <a id="menu-link-view" class="menu-link" href="view-details.html"
+            >View</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div id="main-content" class="main-content">
+      <h2 id="main-title" class="main-title">Add New Record</h2>
+      <form id="post-form" class="post-form">
+        <div id="form-group-name" class="form-group">
+          <label for="input-name" id="label-name" class="form-label">Name</label>
+          <input id="input-name" class="form-input" type="text" name="sname" />
+        </div>
+        <div id="form-group-address" class="form-group">
+          <label for="input-address" id="label-address" class="form-label">Address</label>
+          <input id="input-address" class="form-input" type="text" name="saddress" />
+        </div>
+        <div id="form-group-class" class="form-group">
+          <label for="select-class" id="label-class" class="form-label">Class</label>
+          <select id="select-class" class="form-select" name="class">
+            <option value="" selected disabled>Select Class</option>
+            <option value="1">BCA</option>
+            <option value="2">BSc</option>
+            <option value="3">B.TECH</option>
+          </select>
+        </div>
+        <div id="form-group-phone" class="form-group">
+          <label for="input-phone" id="label-phone" class="form-label">Phone</label>
+          <input id="input-phone" class="form-input" type="text" name="sphone" />
+        </div>
+        <div id="form-group-details" class="form-group">
+          <label for="input-details" id="label-details" class="form-label">Details</label>
+          <textarea id="input-details" class="form-input" name="sdetails" rows="5" cols="30"></textarea>
+        </div>
+        <input id="form-submit" class="submit" type="submit" value="Save" />
+      </form>
+    </div>
+  </div>
+  <script src="./js.js"></script>
+</body>
+
+</html>

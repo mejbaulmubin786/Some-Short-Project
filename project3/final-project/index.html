@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CRUD with Vanilla JS</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div id="wrapper">
+    <div id="header">
+      <h1>CRUD with Vanilla JS</h1>
+    </div>
+    <div id="menu">
+      <ul>
+        <li><a href="#" onclick="showSection('home')">Home</a></li>
+        <li><a href="#" onclick="showSection('add')">Add</a></li>
+        <li><a href="#" onclick="showSection('update')">Update</a></li>
+        <li><a href="#" onclick="showSection('delete')">Delete</a></li>
+      </ul>
+    </div>
+
+    <div id="main-content">
+      <!-- Home Section -->
+      <div id="home" class="section">
+        <h2>All Records</h2>
+        <table cellpadding="7px" id="recordTable">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Class</th>
+              <th>Phone</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Records will be populated here dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Add Section -->
+      <div id="add" class="section" style="display: none;">
+        <h2>Add New Record</h2>
+        <form onsubmit="addRecord(event)">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="addName" required />
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" id="addAddress" required />
+          </div>
+          <div class="form-group">
+            <label>Class</label>
+            <select id="addClass" required>
+              <option value="" disabled selected>Select Class</option>
+              <option value="BCA">BCA</option>
+              <option value="BSC">BSC</option>
+              <option value="B.TECH">B.TECH</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="text" id="addPhone" required />
+          </div>
+          <button type="submit">Save</button>
+        </form>
+      </div>
+
+      <!-- Update Section -->
+      <div id="update" class="section" style="display: none;">
+        <h2>Update Record</h2>
+        <form onsubmit="updateRecord(event)">
+          <div class="form-group">
+            <label>Id</label>
+            <input type="text" id="updateId" required />
+          </div>
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="updateName" required />
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" id="updateAddress" required />
+          </div>
+          <div class="form-group">
+            <label>Class</label>
+            <select id="updateClass" required>
+              <option value="" disabled selected>Select Class</option>
+              <option value="BCA">BCA</option>
+              <option value="BSC">BSC</option>
+              <option value="B.TECH">B.TECH</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="text" id="updatePhone" required />
+          </div>
+          <button type="submit">Update</button>
+        </form>
+      </div>
+
+      <!-- Delete Section -->
+      <div id="delete" class="section" style="display: none;">
+        <h2>Delete Record</h2>
+        <form onsubmit="deleteRecord(event)">
+          <div class="form-group">
+            <label>Id</label>
+            <input type="text" id="deleteId" required />
+          </div>
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
