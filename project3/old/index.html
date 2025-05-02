@@ -1,20 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Todo App</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>CRUD</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-  <div class="container">
-    <h1>📝 My To-Do List</h1>
-    <form id="todo-form">
-      <input type="text" id="todo-input" placeholder="Enter a new task..." required />
-      <button type="submit">Add</button>
-    </form>
-    <ul id="todo-list"></ul>
+  <div id="wrapper" class="wrapper">
+    <div id="header" class="header">
+      <h1 id="header-title" class="header-title">Crud</h1>
+    </div>
+    <div id="menu" class="menu">
+      <ul id="menu-list" class="menu-list">
+        <li id="menu-item-home" class="menu-item">
+          <a id="menu-link-home" class="menu-link" href="index.html">Home</a>
+        </li>
+        <li id="menu-item-add" class="menu-item">
+          <a id="menu-link-add" class="menu-link" href="add.html">Add</a>
+        </li>
+        <li id="menu-item-update" class="menu-item">
+          <a id="menu-link-update" class="menu-link" href="update.html">Update</a>
+        </li>
+        <li id="menu-item-delete" class="menu-item">
+          <a id="menu-link-delete" class="menu-link" href="delete.html">Delete</a>
+        </li>
+        <li id="menu-item-view" class="menu-item">
+          <a id="menu-link-view" class="menu-link" href="view-details.html">View</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="main-content" class="main-content">
+      <h2 id="main-title" class="main-title">All Records</h2>
+      <table id="record-table" class="record-table" cellpadding="7px">
+        <thead id="table-header" class="table-header">
+          <tr id="header-row" class="header-row">
+            <th id="header-id" class="header-cell">Id</th>
+            <th id="header-name" class="header-cell">Name</th>
+            <th id="header-address" class="header-cell">Address</th>
+            <th id="header-class" class="header-cell">Class</th>
+            <th id="header-phone" class="header-cell">Phone</th>
+            <th id="header-action" class="header-cell">Action</th>
+          </tr>
+        </thead>
+        <tbody id="table-body" class="table-body">
+          <!-- classname -->
+          <!-- <tr id="row-2" class="table-row">
+              <td id="row-2-id" class="table-cell">table-cell</td>
+              <td id="row-2-name" class="table-cell">table-cell</td>
+              <td id="row-2-address" class="table-cell">table-cell</td>
+              <td id="row-2-class" class="table-cell">table-cell</td>
+              <td id="row-2-phone" class="table-cell">table-cell</td>
+              <td id="row-2-action" class="table-cell">
+                <a
+                  id="row-2-edit"
+                  class="action-link edit-link"
+                  href="edit.html"
+                  >Edit</a
+                >
+                <a
+                  id="row-2-delete"
+                  class="action-link delete-link"
+                  href="delete-inline.html"
+                  >Delete</a
+                >
+                <a
+                  id="row-2-view"
+                  class="action-link view-link"
+                  href="view-details.html"
+                  >View</a
+                >
+              </td>
+            </tr> -->
+          <!-- classname -->
+          <!-- <tr id="row-1" class="table-row">
+              <td id="row-1-id" class="table-cell">1</td>
+              <td id="row-1-name" class="table-cell">Ramesh</td>
+              <td id="row-1-address" class="table-cell">Delhi</td>
+              <td id="row-1-class" class="table-cell">BCA</td>
+              <td id="row-1-phone" class="table-cell">9876543210</td>
+              <td id="row-1-action" class="table-cell">
+                <a
+                  id="row-1-edit"
+                  class="action-link edit-link"
+                  href="edit.html"
+                  >Edit</a
+                >
+                <a
+                  id="row-1-delete"
+                  class="action-link delete-link"
+                  href="delete-inline.html"
+                  >Delete</a
+                >
+                <a
+                  id="row-1-view"
+                  class="action-link view-link"
+                  href="view-details.html"
+                  >View</a
+                >
+              </td>
+            </tr> -->
+          <!-- Repeat for all rows -->
+          <!-- <tr id="row-2" class="table-row">
+              <td id="row-2-id" class="table-cell">2</td>
+              <td id="row-2-name" class="table-cell">Suresh</td>
+              <td id="row-2-address" class="table-cell">Punjab</td>
+              <td id="row-2-class" class="table-cell">BCOM</td>
+              <td id="row-2-phone" class="table-cell">9876543210</td>
+              <td id="row-2-action" class="table-cell">
+                <a
+                  id="row-2-edit"
+                  class="action-link edit-link"
+                  href="edit.html"
+                  >Edit</a
+                >
+                <a
+                  id="row-2-delete"
+                  class="action-link delete-link"
+                  href="delete-inline.html"
+                  >Delete</a
+                >
+                <a
+                  id="row-2-view"
+                  class="action-link view-link"
+                  href="view-details.html"
+                  >View</a
+                >
+              </td>
+            </tr> -->
+          <!-- Add more rows similarly -->
+        </tbody>
+      </table>
+    </div>
   </div>
-  <script src="script.js"></script>
+
+  <script src="js/script.js"></script>
 </body>
+
 </html>

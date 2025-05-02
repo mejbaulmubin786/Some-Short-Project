@@ -2,6 +2,10 @@ body {
   font-family: Arial, sans-serif;
   background: #f2f2f2;
   padding: 20px;
+  background-image: url(../img/001.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 5s ease-in-out;
 }
 
 .container {
