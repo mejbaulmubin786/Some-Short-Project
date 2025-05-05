@@ -1,89 +1,47 @@
-const form = document.getElementById('todo-form');
-const nameInput = document.getElementById('task-name');
-const descInput = document.getElementById('task-desc');
-const tableBody = document.querySelector('#task-table tbody');
 
-let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-let editIndex = null;
+const taskNameInput = document.getElementById('taskNameInput');
+const taskDescriptionInput = document.getElementById('taskDescriptionInput');
+const addTaskBtn = document.getElementById('addTaskBtn');
+const taskList = document.getElementById('taskList');
 
-function saveTasks() {
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-}
+addTaskBtn.addEventListener('click', () => {
+  const taskName = taskNameInput.value.trim();
+  const taskDescription = taskDescriptionInput.value.trim();
 
-function renderTasks() {
-  tableBody.innerHTML = '';
-  tasks.forEach((task, index) => {
-    const row = document.createElement('tr');
+  if (taskName !== '') {
+    const taskCard = document.createElement('div');
+    taskCard.className = 'taskCard';
+    taskCard.innerHTML = `
+                    <h3>${taskName}</h3>
+                    <p>${taskDescription}</p>
+                    <div>
+                        <button class="editBtn">Edit</button>
+                        <button class="deleteBtn">Delete</button>
+                    </div>
+                `;
 
-    row.innerHTML = `
-      <td>${index + 1}</td>
-      <td>${task.name}</td>
-      <td>${task.description}</td>
-      <td class="actions">
-        <button class="edit" onclick="editTask(${index})">Edit</button>
-        <button class="delete" onclick="deleteTask(${index})">Delete</button>
-      </td>
-    `;
+    const editBtn = taskCard.querySelector('.editBtn');
+    const deleteBtn = taskCard.querySelector('.deleteBtn');
 
-    tableBody.appendChild(row);
-  });
-}
+    editBtn.addEventListener('click', () => {
+      const newName = prompt('Enter the new task name:', taskName);
+      const newDescription = prompt('Enter the new task description:', taskDescription);
+      if (newName && newName.trim() !== '') {
+        taskCard.querySelector('h3').textContent = newName.trim();
+      }
+      if (newDescription && newDescription.trim() !== '') {
+        taskCard.querySelector('p').textContent = newDescription.trim();
+      }
+    });
 
-function addOrUpdateTask(e) {
-  e.preventDefault();
-  const name = nameInput.value.trim();
-  const description = descInput.value.trim();
+    deleteBtn.addEventListener('click', () => {
+      taskCard.remove();
+    });
 
-  if (editIndex !== null) {
-    tasks[editIndex] = { name, description };
-    editIndex = null;
+    taskList.appendChild(taskCard);
+    taskNameInput.value = '';
+    taskDescriptionInput.value = '';
   } else {
-    tasks.push({ name, description });
+    alert('Please enter a task name!');
   }
-
-  saveTasks();
-  renderTasks();
-  form.reset();
-}
-
-function deleteTask(index) {
-  if (confirm('Are you sure you want to delete this task?')) {
-    tasks.splice(index, 1);
-    saveTasks();
-    renderTasks();
-  }
-}
-
-function editTask(index) {
-  const task = tasks[index];
-  nameInput.value = task.name;
-  descInput.value = task.description;
-  editIndex = index;
-}
-
-form.addEventListener('submit', addOrUpdateTask);
-renderTasks();
-
-/*
-
- <div class="container">
-    <h1>To-Do list for Assignment</h1>
-    <form id="todo-form">
-      <input type="text" id="task-name" placeholder="Task Name" required />
-      <textarea id="task-desc" placeholder="Task Description" required></textarea>
-      <button type="submit">Submit</button>
-    </form>
-
-    <table id="task-table">
-      <thead>
-        <tr>
-          <th class="id">id</th>
-          <th class="name">Name</th>
-          <th>Description</th>
-          <th class="action">Actions</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
-  */
+});
