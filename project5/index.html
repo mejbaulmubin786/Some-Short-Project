@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JS-Assignment</title>
+  <!-- <link rel="stylesheet" href="styles.css"/> -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do list for Assignment</h1>
+    <form id="todo-form">
+      <input type="text" id="task-name" placeholder="Task Name" required />
+      <textarea id="task-desc" placeholder="Task Description" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+
+    <table id="task-table">
+      <thead>
+        <tr>
+          <th class="id">id</th>
+          <th class="name">Name</th>
+          <th>Description</th>
+          <th class="action">Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

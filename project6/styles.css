@@ -1,0 +1,103 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+}
+
+#taskNameInput {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-family: 'Inter', sans-serif;
+}
+
+#taskDescriptionInput {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-family: 'Inter', sans-serif;
+}
+
+#addTaskBtn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+#addTaskBtn:hover {
+  background-color: #45a049;
+}
+
+#taskList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.taskCard {
+  background-color: white;
+  padding: 15px;
+  margin: 10px;
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.taskCard h3 {
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.taskCard p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.taskCard button {
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.taskCard .editBtn {
+  background-color: #008CBA;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.taskCard .editBtn:hover {
+  background-color: #007ba7;
+}
+
+.taskCard .deleteBtn {
+  background-color: #f44336;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.taskCard .deleteBtn:hover {
+  background-color: #d32f2f;
+}
