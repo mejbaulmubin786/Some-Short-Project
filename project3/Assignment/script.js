@@ -33,35 +33,76 @@ setInterval(changeBackgroundImage, 5000);
 // =============================================================================
 
 
-
-
-
-
-
 const form = document.getElementById('todo-form');
 const nameInput = document.getElementById('task-name');
 const descInput = document.getElementById('task-desc');
 const buttonSubmit = document.getElementById('submit');
-// const tableBody = document.querySelector('#task-table tbody');
+const tasklist = document.getElementById('taskList');
 
-buttonSubmit.addEventListener('click', function () {
-  event.preventDefault()
-  const tasklist = document.getElementById('taskList');
-  tasklist.innerHTML += `<div class="taskCard">
-<h3>${nameInput.value}</h3>
-<p>${descInput.value}</p>
-<div>
-  <button class="editBtn">Edit</button>
-  <button class="deleteBtn">Delete</button>
-</div>`;
+let tasks = []; // Array to store task objects
+let currentlyEditingIndex = -1; // To keep track of the index being edited
+
+function renderTasks() {
+  tasklist.innerHTML = ''; // Clear the current display
+  tasks.forEach((task, index) => {
+    const taskDiv = document.createElement('div');
+    taskDiv.classList.add('taskCard');
+    taskDiv.innerHTML = `
+            <h3>${task.name}</h3>
+            <p>${task.description}</p>
+            <div>
+                <button class="editBtn" data-index="${index}">Edit</button>
+                <button class="deleteBtn" data-index="${index}">Delete</button>
+            </div>
+        `;
+    tasklist.appendChild(taskDiv);
+  });
+}
+
+buttonSubmit.addEventListener('click', function (event) {
+  event.preventDefault();
+  const taskName = nameInput.value.trim();
+  const taskDesc = descInput.value.trim();
+
+  if (taskName && taskDesc) {
+    if (currentlyEditingIndex !== -1) {
+      // Update existing task
+      tasks[currentlyEditingIndex].name = taskName;
+      tasks[currentlyEditingIndex].description = taskDesc;
+      currentlyEditingIndex = -1; // Reset editing index
+      buttonSubmit.textContent = 'Add Task'; // Change button text back
+    } else {
+      // Add new task
+      tasks.push({ name: taskName, description: taskDesc });
+    }
+    renderTasks(); // Update the displayed list
+    nameInput.value = ''; // Clear input fields
+    descInput.value = '';
+  }
 });
 
 taskList.addEventListener('click', function (event) {
-  if (event.target.classList.contains('editBtn')) {
-    nameInput.value = nameInput.value;
+  if (event.target.classList.contains('deleteBtn')) {
+    const indexToDelete = parseInt(event.target.dataset.index);
+    if (!isNaN(indexToDelete) && indexToDelete >= 0 && indexToDelete < tasks.length) {
+      tasks.splice(indexToDelete, 1); // Remove the task from the array
+      renderTasks(); // Re-render the updated list
+    }
+  } else if (event.target.classList.contains('editBtn')) {
+    const indexToEdit = parseInt(event.target.dataset.index);
+    if (!isNaN(indexToEdit) && indexToEdit >= 0 && indexToEdit < tasks.length) {
+      // Populate the form with the task details for editing
+      nameInput.value = tasks[indexToEdit].name;
+      descInput.value = tasks[indexToEdit].description;
 
-  } else if (event.target.classList.contains('deleteBtn')) {
-    console.log('Delete button clicked');
-    // এখানে ডিলিট বাটনের ক্লিক হ্যান্ডলারের কোড লিখুন
+      // Set the index being edited
+      currentlyEditingIndex = indexToEdit;
+
+      // Change the submit button text to "Update Task"
+      buttonSubmit.textContent = 'Update Task';
+    }
   }
 });
+
+// Initial rendering
+renderTasks();
