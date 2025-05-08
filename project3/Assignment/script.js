@@ -41,5 +41,27 @@ setInterval(changeBackgroundImage, 5000);
 const form = document.getElementById('todo-form');
 const nameInput = document.getElementById('task-name');
 const descInput = document.getElementById('task-desc');
-const tableBody = document.querySelector('#task-table tbody');
+const buttonSubmit = document.getElementById('submit');
+// const tableBody = document.querySelector('#task-table tbody');
 
+buttonSubmit.addEventListener('click', function () {
+  event.preventDefault()
+  const tasklist = document.getElementById('taskList');
+  tasklist.innerHTML += `<div class="taskCard">
+<h3>${nameInput.value}</h3>
+<p>${descInput.value}</p>
+<div>
+  <button class="editBtn">Edit</button>
+  <button class="deleteBtn">Delete</button>
+</div>`;
+});
+
+taskList.addEventListener('click', function (event) {
+  if (event.target.classList.contains('editBtn')) {
+    nameInput.value = nameInput.value;
+
+  } else if (event.target.classList.contains('deleteBtn')) {
+    console.log('Delete button clicked');
+    // এখানে ডিলিট বাটনের ক্লিক হ্যান্ডলারের কোড লিখুন
+  }
+});
