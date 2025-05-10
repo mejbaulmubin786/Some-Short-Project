@@ -40,6 +40,7 @@ const buttonSubmit = document.getElementById('submit');
 const tasklist = document.getElementById('taskList');
 
 let tasks = []; // Array to store task objects
+
 let currentlyEditingIndex = -1; // To keep track of the index being edited
 
 function renderTasks() {
@@ -48,7 +49,7 @@ function renderTasks() {
     const taskDiv = document.createElement('div');
     taskDiv.classList.add('taskCard');
     taskDiv.innerHTML = `
-            <h3>${task.name}</h3>
+            <h3>${task.name}</h3> 
             <p>${task.description}</p>
             <div>
                 <button class="editBtn" data-index="${index}">Edit</button>
