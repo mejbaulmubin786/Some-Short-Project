@@ -1,0 +1,226 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* A more modern and widely liked font */
+  background: #e9ecef;
+  /* A light grey background */
+  padding: 30px;
+  /* Slightly increased padding for more spacing */
+  background-image: url(../img/001.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  /* Smoother transition for background changes */
+}
+
+.container {
+  background: #ffffff;
+  /* Pure white container */
+  padding: 30px;
+  /* Increased padding inside the container */
+  border-radius: 12px;
+  /* More rounded corners */
+  max-width: 900px;
+  /* Slightly wider container */
+  margin: 40px auto;
+  /* Increased top/bottom margin for better visual separation */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  /* Softer, more pronounced shadow */
+  border: 1px solid #dee2e6;
+  /* Light border for subtle definition */
+}
+
+h1 {
+  text-align: center;
+  color: #343a40;
+  /* Darker, more readable heading color */
+  margin-bottom: 25px;
+  /* Increased spacing below the heading */
+}
+
+form {
+  display: grid;
+  /* Using grid for more flexible layout */
+  grid-template-columns: 1fr;
+  /* Single column layout for now */
+  gap: 15px;
+  /* Increased gap between form elements */
+  margin-bottom: 40px;
+  /* Increased margin below the form */
+}
+
+label {
+  font-weight: bold;
+  /* Make labels stand out */
+  color: #495057;
+}
+
+input,
+textarea {
+  padding: 12px;
+  /* Slightly larger padding */
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  /* Lighter border */
+  border-radius: 8px;
+  /* More rounded input fields */
+}
+
+textarea {
+  min-height: 120px;
+  /* Slightly taller default for textarea */
+}
+
+button {
+  padding: 12px 20px;
+  /* More horizontal padding */
+  background: #007bff;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  /* More rounded button */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease-in-out;
+  /* Smooth hover transition */
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #dee2e6;
+  /* Border around the entire table */
+  border-radius: 8px;
+  /* Rounded corners for the table */
+  overflow: hidden;
+  /* Ensures rounded corners are applied to content */
+}
+
+thead {
+  background-color: #343a40;
+  /* Darker header background */
+  color: white;
+}
+
+th,
+td {
+  border: 1px solid #dee2e6;
+  /* Lighter cell borders */
+  padding: 12px;
+  /* Increased cell padding */
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+  /* Make table headers bold */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+  /* Light grey for even rows for better readability */
+}
+
+.actions {
+  display: flex;
+  /* Arrange action buttons in a row */
+  gap: 8px;
+  /* Space between action buttons */
+  justify-content: flex-start;
+  /* Align buttons to the left */
+}
+
+.actions button {
+  padding: 8px 12px;
+  /* Adjusted padding for action buttons */
+  border: none;
+  border-radius: 6px;
+  /* Rounded corners for action buttons */
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.actions button:hover {
+  opacity: 0.8;
+  /* Slightly fade on hover */
+}
+
+.actions .view {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.actions .edit {
+  background-color: #ffc107;
+  color: #212529;
+  /* Dark text on yellow */
+}
+
+.actions .delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+#taskList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.taskCard {
+  background-color: white;
+  padding: 15px;
+  margin: 10px;
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.taskCard h3 {
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.taskCard p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.taskCard button {
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.taskCard .editBtn {
+  background-color: #008CBA;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.taskCard .editBtn:hover {
+  background-color: #007ba7;
+}
+
+.taskCard .deleteBtn {
+  background-color: #f44336;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.taskCard .deleteBtn:hover {
+  background-color: #d32f2f;
+}
