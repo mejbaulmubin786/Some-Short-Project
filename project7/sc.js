@@ -3,6 +3,8 @@ let secondsElement = document.getElementById('seconds');
 let minutesElement = document.getElementById('minutes');
 let hoursElement = document.getElementById('hours');
 let startButton = document.getElementById('startButton');
+let stopButton = document.getElementById('stopButton');
+let resetButton = document.getElementById('resetButton');
 
 let millisecondsCount = 0;
 let secondsCount = 0;
@@ -15,6 +17,27 @@ function startStopwatch() {
   if (intervalId) return; // Prevent multiple intervals from starting
 
   intervalId = setInterval(updateTime, 10); // Update every 10 milliseconds
+}
+
+function stopStopwatch() {
+  clearInterval(intervalId); // Stop the interval
+  intervalId = null; // Reset intervalId to allow restarting
+}
+
+function resetStopwatch() {
+  stopStopwatch(); // Stop the stopwatch if running
+
+  // Reset all counts
+  millisecondsCount = 0;
+  secondsCount = 0;
+  minutesCount = 0;
+  hoursCount = 0;
+
+  // Update the DOM
+  millisecondsElement.innerHTML = millisecondsCount.toString().padStart(3, '0');
+  secondsElement.innerHTML = secondsCount.toString().padStart(2, '0');
+  minutesElement.innerHTML = minutesCount.toString().padStart(2, '0');
+  hoursElement.innerHTML = hoursCount.toString().padStart(2, '0');
 }
 
 function updateTime() {
@@ -45,5 +68,7 @@ function updateTime() {
   hoursElement.innerHTML = hoursCount.toString().padStart(2, '0');
 }
 
-// Attach event listener to the Start button
+// Attach event listeners to buttons
 startButton.addEventListener('click', startStopwatch);
+stopButton.addEventListener('click', stopStopwatch);
+resetButton.addEventListener('click', resetStopwatch);
