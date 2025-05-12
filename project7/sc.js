@@ -9,8 +9,10 @@ function st() {
   setInterval(() => {
     let count = go++;
     milliseconds.innerHTML = count.toString().padStart(3, '0');
-  }, 1000);
+  }, 10);
 }
+
+
 
 startButton.addEventListener('click', st);
 milliseconds.style.color = 'red';
