@@ -2,10 +2,15 @@
 let milliseconds = document.getElementById('milliseconds');
 let startButton = document.getElementById('startButton');
 
-let go = milliseconds.innerHTML = '00';
+let go = milliseconds.innerHTML = '000';
 
-setInterval(() => {
-  milliseconds.innerHTML = go++;
-}, 10);
 
+function st() {
+  setInterval(() => {
+    let count = go++;
+    milliseconds.innerHTML = count.toString().padStart(3, '0');
+  }, 1000);
+}
+
+startButton.addEventListener('click', st);
 milliseconds.style.color = 'red';
