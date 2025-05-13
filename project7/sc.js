@@ -10,7 +10,21 @@ let resetButton = document.getElementById('resetButton');
 
 let timeElements = document.getElementsByClassName('time');
 let timeColorElements = document.getElementsByTagName('span');
+/*  এভাবেও করা যেতো
+let timeElements = document.querySelectorAll('.time');
+let timeColorElements = document.querySelectorAll('span');
 
+// Change color for elements with class "time"
+timeElements.forEach(element => {
+  element.style.color = 'red';
+});
+
+// Change color for all <span> elements
+timeColorElements.forEach(element => {
+  element.style.color = 'red';
+});
+
+*/
 // Change color for elements with class "time"
 for (let i = 0; i < timeElements.length; i++) {
   timeElements[i].style.color = 'red';
