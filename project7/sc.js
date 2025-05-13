@@ -6,6 +6,21 @@ let startButton = document.getElementById('startButton');
 let stopButton = document.getElementById('stopButton');
 let resetButton = document.getElementById('resetButton');
 
+
+
+let timeElements = document.getElementsByClassName('time');
+let timeColorElements = document.getElementsByTagName('span');
+
+// Change color for elements with class "time"
+for (let i = 0; i < timeElements.length; i++) {
+  timeElements[i].style.color = 'red';
+}
+
+// Change color for all <span> elements
+// for (let i = 0; i < timeColorElements.length; i++) {
+//   timeColorElements[i].style.color = 'red';
+// }
+
 let millisecondsCount = 0;
 let secondsCount = 0;
 let minutesCount = 0;
@@ -17,11 +32,18 @@ function startStopwatch() {
   if (intervalId) return; // Prevent multiple intervals from starting
 
   intervalId = setInterval(updateTime, 10); // Update every 10 milliseconds
+  for (let i = 0; i < timeElements.length; i++) {
+    timeElements[i].style.color = 'blue';
+  }
 }
 
 function stopStopwatch() {
   clearInterval(intervalId); // Stop the interval
   intervalId = null; // Reset intervalId to allow restarting
+
+  for (let i = 0; i < timeElements.length; i++) {
+    timeElements[i].style.color = 'red';
+  }
 }
 
 function resetStopwatch() {
@@ -38,6 +60,11 @@ function resetStopwatch() {
   secondsElement.innerHTML = secondsCount.toString().padStart(2, '0');
   minutesElement.innerHTML = minutesCount.toString().padStart(2, '0');
   hoursElement.innerHTML = hoursCount.toString().padStart(2, '0');
+
+
+  for (let i = 0; i < timeElements.length; i++) {
+    timeElements[i].style.color = 'green';
+  }
 }
 
 function updateTime() {
