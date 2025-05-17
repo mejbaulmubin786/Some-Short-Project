@@ -1,13 +1,14 @@
 import React from 'react'
 
-const card = (props) => {
+const card = ({title, text, buttonText, design}) => {
+ // if i use (props) as a paramitter let {title, text, buttonText} = props
 
   return (
     <>
-      <div className='main'>
-        <h1>{props.title}</h1>
-        <p>{props.text}</p>
-        <button className='button'>{props.buttonText}</button>
+      <div className={design}>
+        <h1>{title}</h1>
+        <p>{text}</p>
+        <button className='button'>{buttonText}</button>
       </div>
     </>
   )

@@ -1,3 +1,7 @@
+body {
+  background-color: pink;
+}
+
 .main {
   width: 300px;
   background-color: beige;
@@ -5,6 +9,22 @@
   text-align: center;
   margin-top: 20px;
   border-radius: 20px;
+}
+
+.designTwo {
+  background-color: aquamarine;
+}
+
+.designThree {
+  background-color: greenyellow;
+}
+
+.designFour {
+  background-color: yellow;
+}
+
+.designFive {
+  background-color: azure;
 }
 
 .button {
@@ -26,5 +46,4 @@
   background-color: #5cb85c;
   border-color: #4cae4c;
   text-align: center;
-
 }
