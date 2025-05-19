@@ -1,6 +1,6 @@
 import React from 'react'
 
-const card = ({title, text, buttonText, design}) => {
+const card = ({title, text, buttonText, design, type}) => {
  // if i use (props) as a paramitter let {title, text, buttonText} = props
 
   return (
@@ -8,7 +8,11 @@ const card = ({title, text, buttonText, design}) => {
       <div className={design}>
         <h1>{title}</h1>
         <p>{text}</p>
-        <button className='button'>{buttonText}</button>
+        {
+          //type ? <button className='button'>{buttonText}</button>: ""
+
+          type && <button className='button'>{buttonText}</button>
+        }
       </div>
     </>
   )
